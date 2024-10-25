@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>API Documentation</h1>
+    </header>
+
+    <section>
+        <h2>API Endpoints</h2>
+        <div class="container">
+            <div class="sidebar">
+                <h2>Endpoints</h2>
+                <ul>
+                    <li><a href="#" onclick="showContent('get')">1. GET /api/resource</a></li>
+                    <li><a href="#" onclick="showContent('post')">2. POST /api/resource</a></li>
+                    <li><a href="#" onclick="showContent('delete')">3. DELETE /api/resource/{id}</a></li>
+                    <li><a href="#" onclick="showContent('put')">4. PUT /api/resource/{id}</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div id="get" class="content-section">
+                    <h3>1. GET /api/resource</h3>
+                    <p>Retrieve a list of resources.</p>
+                    <h4>Request</h4>
+                    <pre><code>GET /api/resource</code></pre>
+                    <h4>Response</h4>
+                    <pre><code>{
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "Resource 1"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Resource 2"
+                    }
+                ]
+            }</code></pre>
+                </div>
+                <div id="post" class="content-section" style="display:none;">
+                    <h3>2. POST /api/resource</h3>
+                    <p>Create a new resource.</p>
+                    <h4>Request</h4>
+                    <pre><code>POST /api/resource
+Content-Type: application/json
+
+{
+    "name": "New Resource"
+}</code></pre>
+                    <h4>Response</h4>
+                    <pre><code>{
+    "id": 3,
+    "name": "New Resource"
+}</code></pre>
+                </div>
+                <div id="delete" class="content-section" style="display:none;">
+                    <h3>3. DELETE /api/resource/{id}</h3>
+                    <p>Delete a resource by ID.</p>
+                    <h4>Request</h4>
+                    <pre><code>DELETE /api/resource/1</code></pre>
+                    <h4>Response</h4>
+                    <pre><code>{
+            "message": "Resource deleted successfully."
+        }</code></pre>
+                </div>
+                <div id="put" class="content-section" style="display:none;">
+                    <h3>4. PUT /api/resource/{id}</h3>
+                    <p>Update an existing resource.</p>
+                    <h4>Request</h4>
+                    <pre><code>PUT /api/resource/1
+Content-Type: application/json
+
+{
+    "name": "Updated Resource"
+}</code></pre>
+                    <h4>Response</h4>
+                    <pre><code>{
+    "id": 1,
+    "name": "Updated Resource"
+}</code></pre>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
